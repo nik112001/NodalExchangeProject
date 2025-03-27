@@ -4,14 +4,18 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener
 import org.springframework.stereotype.Component
 
 @Component
-open class Receiver() {
+class Receiver(private val sender: Sender) {
 
     @RabbitListener(queues = ["service2Queue"])
-  open fun receivePingFromService1(message: String) {
-
+    fun receivePingFromService1(message: String) {
+        println("[Service-2] Received from service2Queue: $message")
 
         if (message == "ping") {
-            println("[Service-2] Received from service2Queue: $message")
+            sender.sendPongToService2() // Respond with "pong"
+
+            Thread.sleep(10_000) // Wait 10 seconds
+
+            sender.sendPingToService1() // Restart loop
         }
     }
 }

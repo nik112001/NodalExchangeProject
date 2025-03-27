@@ -6,11 +6,13 @@ import org.springframework.boot.runApplication
 import org.springframework.context.annotation.Bean
 
 @SpringBootApplication
-open class SpringKotlinApplication {
+class SpringKotlinApplication {
+
 	@Bean
-	open fun service2Queue(): Queue = Queue("service2Queue", false)
+	fun service1Queue(): Queue = Queue("service1Queue", false)
 
-
+	@Bean
+	fun service2Queue(): Queue = Queue("service2Queue", false)
 }
 
 fun main(args: Array<String>) {
