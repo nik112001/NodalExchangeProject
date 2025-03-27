@@ -1,5 +1,5 @@
 package com.example.spring_rabbitmq;
-
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -28,5 +28,10 @@ public class SpringRabbitmqApplication {
 			System.out.println("Service-1: Sending 'ping'...");
 			rabbitTemplate.convertAndSend(QUEUE_NAME, "ping");
 		};
+	}
+
+	@RabbitListener(queues = QUEUE_NAME)
+	public void receiveMessage(String message) {
+		System.out.println("Service-2: Received message - " + message);
 	}
 }
