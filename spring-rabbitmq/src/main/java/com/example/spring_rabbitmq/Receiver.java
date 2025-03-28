@@ -3,6 +3,8 @@ package com.example.spring_rabbitmq;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
+
+
 @Component
 public class Receiver {
     private final Sender sender; // Inject sender to send responses
@@ -29,6 +31,7 @@ public class Receiver {
 
             sender.sendPingToService2(); // Restart loop
         }
+
 
     }
 }

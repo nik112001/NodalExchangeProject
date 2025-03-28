@@ -28,6 +28,6 @@ public class Sender {
     public void sendPongToService1() {
         String message = "pong";
         rabbitTemplate.convertAndSend(SERVICE1_QUEUE, message);
-        System.out.println("[Service-1] Sent to service1Queue: " + message);
+        System.out.println("[Service-1] Sent  " + message);
     }
 }

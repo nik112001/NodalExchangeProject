@@ -10,7 +10,7 @@ open class Sender @Autowired constructor(private val rabbitTemplate: RabbitTempl
     // Send "pong" to service2Queue
     fun sendPongToService2() {
         rabbitTemplate.convertAndSend("service2Queue", "pong")
-        println("[Service-2] Sent pong to Service-2")
+        println("[Service-2] Sent pong ")
     }
 
     // Send "ping" to service1Queue

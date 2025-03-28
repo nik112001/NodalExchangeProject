@@ -1,9 +1,0 @@
-spring:
-  rabbitmq:
-    host: rabbitmq  # Use the service name from Docker Compose or your Docker network
-    port: 5672      # Correct RabbitMQ port
-    username: guest
-    password: guest
-  logging:
-    level:
-      org.springframework.amqp: DEBUG
