@@ -31,11 +31,19 @@
 				<artifactId>spring-boot-starter-amqp</artifactId>
 				<version>${spring-boot.version}</version>
 			</dependency>
+			<!-- Spring AMQP Dependency with Compatible Version -->
+			<dependency>
+				<groupId>org.springframework.amqp</groupId>
+				<artifactId>spring-amqp</artifactId>
+				<version>2.4.8</version> <!-- Use compatible version -->
+			</dependency>
+			<!-- Spring Boot Web Starter -->
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-web</artifactId>
 				<version>${spring-boot.version}</version>
 			</dependency>
+			<!-- Spring Boot Starter -->
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter</artifactId>
