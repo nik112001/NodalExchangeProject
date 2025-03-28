@@ -12,10 +12,10 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 open class SpringKotlinApplication {
 
 	@Bean
-	open fun service1Queue(): Queue = Queue("service1Queue", false)
+	open fun service1Queue(): Queue = Queue("service1Queue", true)
 
 	@Bean
-	open fun service2Queue(): Queue = Queue("service2Queue", false)
+	open fun service2Queue(): Queue = Queue("service2Queue", true)
 }
 
 fun main(args: Array<String>) {
