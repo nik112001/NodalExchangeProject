@@ -14,9 +14,11 @@ open class Receiver(private val sender: Sender) {
             println("[Service-2] Received from Service-1: $message")
             sender.sendPongToService2() // Respond with "pong"
 
+            println("Service 2 will wait for 10 seconds")
             Thread.sleep(10_000) // Wait 10 seconds
 
-            sender.sendPingToService1() // Restart loop
+            sender.sendPingToService1()
+
         }
     }
 }
