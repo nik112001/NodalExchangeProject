@@ -4,15 +4,18 @@ import org.springframework.amqp.core.Queue
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import org.springframework.context.annotation.Bean
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration
+
 
 @SpringBootApplication
-class SpringKotlinApplication {
+@EnableAutoConfiguration
+open class SpringKotlinApplication {
 
 	@Bean
-	fun service1Queue(): Queue = Queue("service1Queue", false)
+	open fun service1Queue(): Queue = Queue("service1Queue", false)
 
 	@Bean
-	fun service2Queue(): Queue = Queue("service2Queue", false)
+	open fun service2Queue(): Queue = Queue("service2Queue", false)
 }
 
 fun main(args: Array<String>) {

@@ -4,11 +4,11 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener
 import org.springframework.stereotype.Component
 
 @Component
-class Receiver(private val sender: Sender) {
+open class Receiver(private val sender: Sender) {
 
     @RabbitListener(queues = ["service2Queue"])
-    fun receivePingFromService1(message: String) {
-        println("[Service-2] Received from service2Queue: $message")
+   open fun receivePingFromService1(message: String) {
+        println("[Service-2] Received from Service-1: $message")
 
         if (message == "ping") {
             sender.sendPongToService2() // Respond with "pong"
